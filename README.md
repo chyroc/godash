@@ -1,0 +1,2 @@
+# godash
+go impl lodash
