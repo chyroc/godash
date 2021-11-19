@@ -36,7 +36,7 @@ func main() {
 	}
 
 	body := strings.Join(bodyList, "\n\n")
-	err = ioutil.WriteFile(file, []byte(body), 0666)
+	err = ioutil.WriteFile(file, []byte(body), 0o666)
 	if err != nil {
 		panic(err)
 	}

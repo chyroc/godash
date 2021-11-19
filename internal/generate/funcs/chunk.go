@@ -6,11 +6,12 @@ import (
 
 var Funcs = map[string]func(string) string{
 	"chunk": generateChunk,
+	"set":   generateSet,
 }
 
 func generateChunk(typ string) string {
 	camelCaseTyp := internal.ToCamelCase(typ)
-	var tpl = `func Chunk{{ .CamelCaseTyp }}(array []{{ .Typ }}, size int) [][]{{ .Typ }} {
+	tpl := `func Chunk{{ .CamelCaseTyp }}(array []{{ .Typ }}, size int) [][]{{ .Typ }} {
 	length := len(array)
 	if length == 0 || size < 1 {
 		return [][]{{ .Typ }}{}
